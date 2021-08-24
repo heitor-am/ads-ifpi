@@ -3,7 +3,7 @@ const input = require('prompt-sync')();
 
 function main() {
   // Read the user's input
-  const x = Number(input("Informe o valor: ")),
+  const x = Number(input("Informe um número: ")),
     p = Number(input("Valor da porcentagem: "));
 
   const result = calculatePercentage(p, x);

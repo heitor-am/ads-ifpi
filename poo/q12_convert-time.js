@@ -3,8 +3,8 @@ const input = require('prompt-sync')();
 
 function main() {
   // Read the user's input
-  const value = Number(input("Valor em segundos: "));
-  const result = convertTime(value);
+  const valueInSeconds = Number(input("Valor em segundos: "));
+  const result = convertTime(valueInSeconds);
 
   console.log(`\nResultado: ${result}`);
 }

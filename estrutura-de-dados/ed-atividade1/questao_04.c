@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-/* Leia um número inteiro (3 dígitos), calcule e escreva a soma 
-de seus elementos (C + D + U). */
+/* Leia um número inteiro (3 dígitos), calcule e escreva a 
+soma de seus elementos (C + D + U). */
 
 int main() {
   char number[4];

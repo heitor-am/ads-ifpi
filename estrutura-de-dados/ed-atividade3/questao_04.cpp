@@ -10,11 +10,7 @@ int main() {
     cout << "Digite o " << i + 1 << "° valor: ";
     cin >> a[i];
 
-    if (a[i] % 2 == 0) {
-      b[i] = 0;
-    } else {
-      b[i] = 1;
-    }
+    b[i] = (a[i] % 2 == 0) ? 0 : 1;
   }
 
   cout << "\nVetor B: ";

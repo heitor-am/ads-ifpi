@@ -4,7 +4,8 @@ using namespace std;
 #define n 5
 
 int main() {
-  int array[n], biggest, smallest, positionOfBiggest, positionOfSmallest;
+  int array[n], biggest, smallest;
+  int positionOfBiggest, positionOfSmallest;
 
   for (int i = 0; i < n; i++) {
     cout << "Digite o " << i + 1 << "° valor: ";

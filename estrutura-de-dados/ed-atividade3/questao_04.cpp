@@ -13,9 +13,9 @@ int main() {
     b[i] = (a[i] % 2 == 0) ? 0 : 1;
   }
 
-  cout << "\nVetor B: ";
+  cout << "\nResultado:";
   for (int i = 0; i < n; i++) {
-    cout << b[i] << " ";
+    cout << " " << b[i];
   }
   cout << endl;
 }

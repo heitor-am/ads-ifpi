@@ -12,9 +12,9 @@ int main() {
     b[aux--] = a[i];
   }
 
-  cout << "\nVetor invertido: ";
+  cout << "\nVetor invertido:";
   for (int i = 0; i < n; i++) {
-    cout << b[i] << " ";
+    cout << " " << b[i];
   }
   cout << endl;
 }

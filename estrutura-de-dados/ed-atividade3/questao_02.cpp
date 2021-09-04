@@ -23,9 +23,9 @@ int main() {
     c[i + n] = b[i];
   }
 
-  cout << "\nResultado: ";
+  cout << "\nResultado:";
   for (int i = 0; i < (n * 2); i++) {
-    cout << c[i] << " ";
+    cout << " " << c[i];
   }
   cout << endl;
 }

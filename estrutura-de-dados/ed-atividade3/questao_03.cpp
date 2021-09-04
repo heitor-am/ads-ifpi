@@ -1,18 +1,14 @@
+#include <algorithm>
 #include <iostream>
+#include <vector>
 using namespace std;
 
 #define n 3
 
-int hasElement(int element, int *array) {
-  for (int i = 0; i < (n * 2); i++) {
-    if (element == array[i]) return 1;
-  }
-  return 0;
-}
-
 int main() {
-  int lengthOfUnion = 0, lengthOfIntersection = 0;
-  int a[n], b[n], unionOfSets[n * 2] = { 0 }, intersectionOfSets[n] = { 0 };
+  int a[n], b[n];
+  vector<int> unionOfSets(n * 2), intersectionOfSets(n * 2);
+  vector<int>::iterator it, st, ls;
 
   cout << "### 1° VETOR ### " << endl;
   for (int i = 0; i < n; i++) {
@@ -26,43 +22,21 @@ int main() {
     cin >> b[i];
   }
 
-  for (int i = 0; i < n; i++) {
-    if (!hasElement(a[i], unionOfSets)) {
-      unionOfSets[i] = a[i];
-      lengthOfUnion++;
-    }
-  }
+  sort(a, a + n);
+  sort(b, b + n);
 
-  for (int i = 0; i < n; i++) {
-    if (!hasElement(b[i], unionOfSets)) {
-      unionOfSets[lengthOfUnion++] = b[i];
-    }
-  }
+  it = set_union(a, a + n, b, b + n, unionOfSets.begin());
+  ls = set_intersection(a, a + n, b, b + n, intersectionOfSets.begin());
 
-  for (int i = 0; i < n; i++) {
-    if (a[i] == a[i - 1]) continue;
-
-    for (int j = 0; j < n; j++) {
-      if (a[i] == b[j]) {
-        intersectionOfSets[lengthOfIntersection++] = b[j];
-        break;
-      }
-    }
-  }
-
-  cout << "\nUnião: ";
-  for (int i = 0; i < lengthOfUnion; i++) {
-    cout << unionOfSets[i] << " ";
+  cout << "\nUnião:";
+  for (st = unionOfSets.begin(); st != it; ++st) {
+    cout << " " << *st;
   }
   cout << endl;
 
-  cout << "Interseção: ";
-  if (!intersectionOfSets[0]) {
-    cout << "vazio" << endl;
-  } else {
-    for (int i = 0; i < lengthOfIntersection; i++) {
-      cout << intersectionOfSets[i] << " ";
-    }
-    cout << endl;
+  cout << "Interseção:";
+  for (it = intersectionOfSets.begin(); it != ls; ++it) {
+    cout << " " << *it;
   }
+  cout << endl;
 }
